@@ -12,7 +12,7 @@ export default function Error() {
     <div className={styles.container}>
       <h1>404 Page Not found</h1>
       <Button text={"Go Back Home"} onClick={() => {
-        navigate("/");
+        navigate("/Freelance_Projects");
       }} />
     </div>
   );
