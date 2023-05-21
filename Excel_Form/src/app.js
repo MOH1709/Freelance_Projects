@@ -81,4 +81,5 @@ app.use((err, req, res, next) => {
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`connection successful at port ${port}`);
+  console.log(`allowed url ${process.env.FRONTEND_URL}`);
 });
