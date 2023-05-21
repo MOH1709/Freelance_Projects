@@ -2,6 +2,7 @@ import { useState } from "react";
 import { makeStyles } from "@material-ui/core";
 import { MdMail } from "react-icons/md";
 import { AiFillPhone } from "react-icons/ai";
+import validator from "validator";
 
 
 //-----------------------------------------------> custom imports
@@ -33,6 +34,17 @@ export default function Signup() {
   //-----------------------------------------------> submit
   const handleSubmit = async (e) => {
     try {
+      if (!validator.isEmail(input.email)) {
+        alert("please enter valid email!!")
+        return;
+      }
+
+      if (!validator.isMobilePhone(input.phoneNumber)) {
+        alert("please enter valid phone number !!");
+        return;
+      }
+
+
       e.preventDefault();
       const response = await addDataToExcel(input);
 

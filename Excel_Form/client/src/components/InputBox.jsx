@@ -16,7 +16,7 @@ export default function InputBox(props) {
 
   return (
     <label
-      for={`${rest.name}`}
+      htmlFor={`${rest.name}`}
       className={styles.container}
       style={{
         ...style || {},

@@ -30,9 +30,16 @@ app.post("/excel", async (req, res, next) => {
 
     if (sheetData) {
       const mailOptions = {
-        to: process.env.TEST_EMAIL,
-        subject: "Mail From XYZ Colledge",
-        text: "Your Response Have been Saved Successfully"
+        to: email,
+        subject: "Mail From MS University",
+        text: `
+          name: ${fname}
+          email: ${email}
+          contact number: ${phoneNumber}
+          address: ${address}
+          
+          above details are saved succesfully!!
+        `
       }
 
       sendMail(mailOptions);
