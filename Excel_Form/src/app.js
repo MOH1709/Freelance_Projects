@@ -45,11 +45,25 @@ app.post("/excel", async (req, res, next) => {
 
 
 //-----------------------------------------------> handle error
-app.use((req, res, next) => {
-  // const error = new Error("not found");
-  // error.status = 404;
-  next(createHttpError(404));
+// app.use((req, res, next) => {
+//   // const error = new Error("not found");
+//   // error.status = 404;
+//   next(createHttpError(404));
+// });
+
+// //-----------------------------------------------> check for heroku
+// if (process.env.NODE_ENV == "production") {
+app.use(express.static("client/build"));
+app.get("*", (req, res) => {
+  try {
+    res.sendFile(path.join(__dirname, "../client/build/index.html"));
+  } catch (error) {
+    console.log(error.message);
+    // res.redirect("/404");
+    next();
+  }
 });
+// }
 
 app.use((err, req, res, next) => {
   res.status(err.status || 500);
@@ -62,13 +76,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-// //-----------------------------------------------> check for heroku
-// if (process.env.NODE_ENV == "production") {
-//   app.use(express.static("client/build"));
-//   app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "../client/build/index.html"));
-//   });
-// }
 
 //-----------------------------------------------> adding listener
 const port = process.env.PORT || 5000;
