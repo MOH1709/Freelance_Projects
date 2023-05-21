@@ -1,7 +1,7 @@
 import { google } from "googleapis";
 
 let auth = new google.auth.GoogleAuth({
-  keyFile: "./credentials.json",
+  keyFile: process.env.KEY_FILE_PATH,
   scopes: [
     "https://www.googleapis.com/auth/spreadsheets",
     // 'https://mail.google.com/',
