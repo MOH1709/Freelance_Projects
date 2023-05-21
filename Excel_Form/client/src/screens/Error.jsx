@@ -10,7 +10,8 @@ export default function Error() {
 
   return (
     <div className={styles.container}>
-      <h1>Submit Details</h1>
+      <h3 className={styles.heading}>THE MAHARAJA SAYAJIRAO UNIVERSITY OF VADODARA</h3>
+      <img className={styles.logo} src="/ms_logo.png" alt="Maharaja Sayajirao University" />
       <Button text={"Go To Form"} onClick={() => {
         navigate("/Freelance_Projects");
       }} />
@@ -24,5 +25,14 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+  },
+  heading: {
+    color: "rgb(29, 144, 245)",
+    textAlign: "center",
+  },
+  logo: {
+    width: "50%",
+    // height: 200,
+    marginInline: "auto"
   },
 });

@@ -34,6 +34,8 @@ export default function Signup() {
   //-----------------------------------------------> submit
   const handleSubmit = async (e) => {
     try {
+      e.preventDefault();
+
       if (!validator.isEmail(input.email)) {
         alert("please enter valid email!!")
         return;
@@ -45,7 +47,6 @@ export default function Signup() {
       }
 
 
-      e.preventDefault();
       const response = await addDataToExcel(input);
 
       if (response?.success) {
@@ -75,11 +76,11 @@ export default function Signup() {
 
   return (
     <div className={styles.container}>
+      <img className={styles.logo} src="/ms_logo.png" alt="Maharaja Sayajirao University" />
+
       <h3 className={styles.title}>
         Contact Details
       </h3>
-
-
       <form className={styles.form} onSubmit={handleSubmit}>
         <InputBox
           title={"Full Name"}
@@ -136,10 +137,19 @@ const useStyles = makeStyles({
     marginInline: "auto",
     borderRadius: 20,
     boxShadow: SHADOW,
+    height: "90%",
+    overflow: "auto",
+  },
+  logo: {
+    width: 200,
+    height: 200,
+    marginInline: "auto"
   },
   title: {
     fontSize: 25,
     margin: 10,
+    color: "rgb(29, 144, 245)",
+    // textAlign: "center",
   },
   linkDiv: {
     "& p": {
