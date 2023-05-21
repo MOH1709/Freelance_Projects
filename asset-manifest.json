@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/Freelance_Projects/static/js/main.a3944184.js",
-    "index.html": "/Freelance_Projects/index.html",
-    "main.a3944184.js.map": "/Freelance_Projects/static/js/main.a3944184.js.map"
+    "main.js": "/static/js/main.de7fb96e.js",
+    "index.html": "/index.html",
+    "main.de7fb96e.js.map": "/static/js/main.de7fb96e.js.map"
   },
   "entrypoints": [
-    "static/js/main.a3944184.js"
+    "static/js/main.de7fb96e.js"
   ]
 }
