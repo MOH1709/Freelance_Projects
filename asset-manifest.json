@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/static/js/main.de7fb96e.js",
-    "index.html": "/index.html",
-    "main.de7fb96e.js.map": "/static/js/main.de7fb96e.js.map"
+    "main.js": "/Freelance_Projects/static/js/main.de7fb96e.js",
+    "index.html": "/Freelance_Projects/index.html",
+    "main.de7fb96e.js.map": "/Freelance_Projects/static/js/main.de7fb96e.js.map"
   },
   "entrypoints": [
     "static/js/main.de7fb96e.js"
