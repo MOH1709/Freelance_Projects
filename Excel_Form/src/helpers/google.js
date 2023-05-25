@@ -1,4 +1,5 @@
 import { google } from "googleapis";
+import { v4 } from "uuid";
 
 let auth = new google.auth.GoogleAuth({
   keyFile: process.env.KEY_FILE_PATH,
@@ -40,6 +41,7 @@ async function addDataToSheet({ fname, email, phoneNumber, address }) {
       requestBody: {
         values: [
           [
+            v4(),
             fname,
             email,
             phoneNumber,

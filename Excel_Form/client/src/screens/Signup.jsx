@@ -90,7 +90,7 @@ export default function Signup() {
           onChange={handleChange}
         />
         <InputBox
-          title={"Address"}
+          title={"City"}
           value={input.address}
           name="address"
           required={true}

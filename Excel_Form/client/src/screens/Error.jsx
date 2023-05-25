@@ -3,10 +3,15 @@ import { useNavigate } from "react-router-dom";
 
 //-----------------------------------------------> custom imports
 import { Button } from "../components";
+import { useEffect } from "react";
 
 export default function Error() {
   const styles = useStyles();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate("/Freelance_Projects");
+  }, [])
 
   return (
     <div className={styles.container}>
@@ -22,7 +27,8 @@ export default function Error() {
 //------------------------------------------->custom styles
 const useStyles = makeStyles({
   container: {
-    display: "flex",
+    display: "none",
+    // display: "flex",
     flexDirection: "column",
     alignItems: "center",
   },
