@@ -139,6 +139,7 @@ const useStyles = makeStyles({
     boxShadow: SHADOW,
     height: "90%",
     overflow: "auto",
+    background: "white"
   },
   logo: {
     width: 200,
