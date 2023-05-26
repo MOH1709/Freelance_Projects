@@ -9,9 +9,9 @@ export default function Error() {
   const styles = useStyles();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    navigate("/Freelance_Projects");
-  }, [])
+  // useEffect(() => {
+  //   navigate("/Freelance_Projects");
+  // }, [])
 
   return (
     <div className={styles.container}>
