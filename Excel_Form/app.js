@@ -8,8 +8,8 @@ import path from 'path';
 //-----------------------------------------------> custom
 // import "./helpers/init_mongodb.js";
 import createHttpError from "http-errors";
-import { addDataToSheet } from "./helpers/google.js";
-import { sendMail } from "./helpers/mail.js";
+import { addDataToSheet } from "./src/helpers/google.js";
+import { sendMail } from "./src/helpers/mail.js";
 
 //-----------------------------------------------> using imports
 const app = express();
@@ -68,16 +68,22 @@ app.post("/excel", async (req, res, next) => {
 
 // //-----------------------------------------------> check for heroku
 // if (process.env.NODE_ENV == "production") {
-app.use(express.static("client/build"));
+const root = path.join(__dirname, 'client', 'build')
+app.use(express.static(root));
 app.get("*", (req, res) => {
-  try {
-    res.sendFile(path.join((__dirname).replace("src", ""), "client/build/index.html"));
-  } catch (error) {
-    console.log(error.message);
-    // res.redirect("/404");
-    next();
-  }
-});
+  res.sendFile('index.html', { root });
+})
+
+// app.use(express.static("client/build"));
+// app.get("*", (req, res) => {
+//   try {
+//     res.sendFile(path.join((__dirname).replace("src", ""), "client/build/index.html"));
+//   } catch (error) {
+//     console.log(error.message);
+//     // res.redirect("/404");
+//     next();
+//   }
+// });
 // }
 
 app.use((err, req, res, next) => {

@@ -6,8 +6,8 @@
   "main": "index.js",
   "scripts": {
     "build": "npm i && npm i --prefix client && cd client && npm run build",
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
