@@ -76,12 +76,14 @@ export default function Signup() {
 
   return (
     <div className={styles.container}>
+      <img src="/MS.png" alt="MS University" className={styles.img} />
+
       <img className={styles.logo} src="/ms_logo.png" alt="Maharaja Sayajirao University" />
 
-      <h3 className={styles.title}>
-        Contact Details
-      </h3>
       <form className={styles.form} onSubmit={handleSubmit}>
+        <h3 className={styles.title}>
+          Contact Details
+        </h3>
         <InputBox
           title={"Full Name"}
           value={input.fname}
@@ -129,28 +131,42 @@ export default function Signup() {
 //------------------------------------------->custom styles
 const useStyles = makeStyles({
   container: {
+    position: "relative",
     display: "flex",
     flexDirection: "column",
     width: "100%",
     maxWidth: 500,
     padding: 20,
     marginInline: "auto",
-    borderRadius: 20,
+    // borderRadius: 20,
     boxShadow: SHADOW,
-    height: "90%",
+    height: "100%",
     overflow: "auto",
-    background: "white"
+    // background: "white"
   },
   logo: {
     width: 200,
     height: 200,
-    marginInline: "auto"
+    marginInline: "auto",
+    background: "white",
+    borderRadius: 10,
+    padding: 10,
   },
   title: {
     fontSize: 25,
     margin: 10,
     color: "rgb(29, 144, 245)",
     // textAlign: "center",
+  },
+  img: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    zIndex: -1,
+    width: "100%",
+    height: "100%",
+    opacity: 0.9,
+    objectFit: "cover",
   },
   linkDiv: {
     "& p": {
@@ -160,6 +176,13 @@ const useStyles = makeStyles({
     margin: 10,
   },
   form: {
-
+    alignItems: "center",
+    marginTop: 15,
+    // background: "white",
+    borderRadius: 10,
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
+    // align-items: "center";
   }
 });
