@@ -14,7 +14,7 @@ let auth = new google.auth.GoogleAuth({
 });
 
 
-async function addDataToSheet({ fname, email, phoneNumber, address }) {
+async function addDataToSheet({ fname, email, phoneNumber, address, inqueryFor }) {
   try {
     // create insatance for auth
     const client = await auth.getClient();
@@ -45,7 +45,8 @@ async function addDataToSheet({ fname, email, phoneNumber, address }) {
             fname,
             email,
             phoneNumber,
-            address
+            address,
+            inqueryFor
           ]
         ]
       }

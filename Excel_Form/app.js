@@ -24,19 +24,20 @@ const __dirname = path.dirname(__filename);
 //-----------------------------------------------> using routes
 app.post("/excel", async (req, res, next) => {
   try {
-    const { fname, email, phoneNumber, address } = req.body;
+    const { fname, email, phoneNumber, address, inqueryFor } = req.body;
 
-    const sheetData = await addDataToSheet({ fname, email, phoneNumber, address });
+    const sheetData = await addDataToSheet({ fname, email, phoneNumber, address, inqueryFor });
 
     if (sheetData) {
       const mailOptions = {
-        to: email,
+        to: process.env.RECEIVER_EMAIL,
         subject: "Mail From MS University",
         text: `
           name: ${fname}
           email: ${email}
           contact number: ${phoneNumber}
           address: ${address}
+          Inquery For: ${inqueryFor}
           
           above details are saved succesfully!!
         `

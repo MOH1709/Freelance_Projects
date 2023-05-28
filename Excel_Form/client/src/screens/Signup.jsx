@@ -19,6 +19,7 @@ export default function Signup() {
     address: "",
     email: "",
     phoneNumber: "",
+    inqueryFor: "",
   });
 
   //-----------------------------------------------> on chane
@@ -60,6 +61,7 @@ export default function Signup() {
         address: "",
         email: "",
         phoneNumber: "",
+        inqueryFor:"",
       });
 
     } catch (error) {
@@ -69,6 +71,7 @@ export default function Signup() {
         address: "",
         email: "",
         phoneNumber: "",
+        inqueryFor: "",
       });
 
     }
@@ -112,6 +115,15 @@ export default function Signup() {
           value={input.phoneNumber}
           name="phoneNumber"
           required={true}
+          onChange={handleChange}
+          Icon={<AiFillPhone size={23} />}
+        />
+
+          <InputBox
+          type={"string"}
+          title={"Inquery For"}
+          value={input.inqueryFor}
+          name="inqueryFor"
           onChange={handleChange}
           Icon={<AiFillPhone size={23} />}
         />
@@ -164,7 +176,7 @@ const useStyles = makeStyles({
     left: 0,
     zIndex: -1,
     width: "100%",
-    height: "100%",
+    height: "130%",
     opacity: 0.9,
     objectFit: "cover",
   },
