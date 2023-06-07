@@ -36,7 +36,7 @@ async function addDataToSheet({ fname, email, phoneNumber, address, inqueryFor }
     const metaData = await googleSheets.spreadsheets.values.append({
       auth,
       spreadsheetId,
-      range: "Sheet1!A:D",
+      range: "2023 student detail!A:D",
       valueInputOption: "USER_ENTERED",
       requestBody: {
         values: [
